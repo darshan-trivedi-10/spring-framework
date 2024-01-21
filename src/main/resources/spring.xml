@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+<!--    <bean id="alien" class="org.springboot.Alien" scope="prototype"> </bean>-->
+
+<!--    <bean id="alien" class="org.springboot.Alien" autowire="byName" autowire = "byType">-->
+    <bean id="alien" class="org.springboot.Alien" lazy-init="true">
+        <property name="age" value="21"/>
+        <property name="laptop">
+            <bean class="org.springboot.Laptop" lazy-init="true">
+
+            </bean>
+        </property>
+
+
+<!--        Constructor Injection-->
+<!--        <constructor-arg type="org.springboot.Laptop" ref="laptop"/>-->
+<!--        <constructor-arg value="21"/>-->
+
+<!--        <constructor-arg index="1" ref="laptop"/>-->
+<!--        <constructor-arg index="0" value="21"/>-->
+
+<!--        <constructor-arg name="_age" value="21"/>-->
+<!--        <constructor-arg name="_laptop" ref="laptop"/>-->
+
+    </bean>
+
+
+
+</beans>
+
